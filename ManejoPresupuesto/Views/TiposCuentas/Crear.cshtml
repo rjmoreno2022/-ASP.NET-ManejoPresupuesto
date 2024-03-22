@@ -1,4 +1,5 @@
-﻿
+﻿@model TipoCuenta
+
 @{
     ViewData["Title"] = "Crear Tipo Cuenta";
 }
@@ -11,9 +12,38 @@
 
 <form asp-controller="TiposCuentas" asp-action="Crear">
     <div class="mb-3">
-        <label for="Nombre" class="form-label">Nombre</label>
-        <input type="text" id="Nombre" name="Nombre" class="form-control" />
+        <label asp-for="Nombre" class="form-label"></label>
+        <input type="text" asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input type="text" asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Edad" class="form-label"></label>
+        <input type="text" asp-for="Edad" class="form-control" />
+        <span asp-validation-for="Edad" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="URL" class="form-label"></label>
+        <input type="text" asp-for="URL" class="form-control" />
+        <span asp-validation-for="URL" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TarjetaDeCredito" class="form-label"></label>
+        <input type="text" asp-for="TarjetaDeCredito" class="form-control" />
+        <span asp-validation-for="TarjetaDeCredito" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
